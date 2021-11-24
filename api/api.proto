@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package api;
+
+service Api {
+    rpc AddEntry(AddEntryRequest) returns (AddEntryResponse) {}
+    rpc Kill(KillRequest) returns (KillResponse) {}
+    rpc Revive(ReviveRequest) returns (ReviveResponse) {}
+}
+
+message AddEntryRequest {
+    int32 Key = 1;
+    string Value = 2;
+}
+
+message AddEntryResponse {
+    bool Success = 1;
+}
+
+message KillRequest{}
+message KillResponse{}
+message ReviveRequest{}
+message ReviveResponse{}
